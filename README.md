@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. if you want to use with the Rest API in localhost you need to run the command npm start for using the configured proxy in 8080 port.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. if you want to use with the Rest API in localhost you need to run the command `npm start` for using the configured proxy in 8080 port.
 
 ## Running unit tests
 
