@@ -8,7 +8,7 @@ describe('WeeklyReportComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WeeklyReportComponent ]
+      declarations: [ WeeklyReportComponent],
     })
     .compileComponents();
   });

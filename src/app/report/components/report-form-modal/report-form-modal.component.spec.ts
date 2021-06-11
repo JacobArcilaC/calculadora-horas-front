@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { ReportFormModalComponent } from './report-form-modal.component';
 
@@ -8,7 +9,8 @@ describe('ReportFormModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReportFormModalComponent ]
+      declarations: [ ReportFormModalComponent],
+      providers: [MatDialogRef]
     })
     .compileComponents();
   });
@@ -19,7 +21,4 @@ describe('ReportFormModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

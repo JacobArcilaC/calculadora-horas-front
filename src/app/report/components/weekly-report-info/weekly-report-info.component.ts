@@ -8,7 +8,16 @@ import { Inform } from 'src/app/core/models/inform.model';
 })
 export class WeeklyReportInfoComponent implements OnInit {
 
-  @Input() informe: Inform;
+  @Input() informe: Inform = {
+    idTecnico: '',
+    semana: 0,
+    horasNormales: 0,
+    horasNocturnas: 0,
+    horasDominicales: 0,
+    horasNormalesExtra: 0,
+    horasNocturnasExtra: 0,
+    horasDominicalesExtra: 0,
+  };
   
   constructor() { }
 
