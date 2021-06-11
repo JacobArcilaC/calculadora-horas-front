@@ -1,0 +1,47 @@
+<form [formGroup]="reportForm" (ngSubmit)="saveReport($event)">
+    <mat-card class="report-card mat-elevation-z8">
+      <mat-card-title>Crear Reporte</mat-card-title>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Identificación del tecnico" formControlName="idTecnico">
+              <mat-error *ngIf="reportForm.controls['idTecnico'].hasError('required')">
+                La identificación del técnico es <strong>requerida</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Identificación del servicio" formControlName="idServicio">
+              <mat-error *ngIf="reportForm.controls['idServicio'].hasError('required')">
+                La identificación del servicio es <strong>requerida</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width"> 
+                <input matInput type="datetime-local" placeholder="Fecha y hora de inicio" formControlName="fechaInicio">
+                <mat-error *ngIf="reportForm.controls['fechaInicio'].hasError('required')">
+                    La fecha y hora de inicio son <strong>requeridas</strong>
+                </mat-error>
+            </mat-form-field> 
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="datetime-local" placeholder="Fecha y hora de finalización" formControlName="fechaFin">
+              <mat-error *ngIf="reportForm.controls['fechaFin'].hasError('required')">
+                La fecha y hora de finalizacion son <strong>requeridas</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button [disabled]="reportForm.invalid" mat-raised-button color="primary" type="submit">Guardar</button>
+      </mat-card-actions>
+    </mat-card>
+</form>
+  

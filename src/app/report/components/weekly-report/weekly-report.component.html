@@ -1,0 +1,6 @@
+<app-weekly-report-form (buttonClicked)="setShowInform($event)" (sendResponse)="setInformData($event)"></app-weekly-report-form>
+<app-weekly-report-info *ngIf="showInform" [informe] = "inform"></app-weekly-report-info>
+
+
+
+

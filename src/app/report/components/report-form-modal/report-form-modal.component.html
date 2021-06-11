@@ -1,0 +1,28 @@
+<div mat-dialog-title>Información
+    <ng-template [ngIf]="data.messages.length > 0" [ngIfElse] = "correctIcon">
+        <mat-icon color="warn">report_problem</mat-icon>
+    </ng-template>
+    <ng-template #correctIcon>
+        <mat-icon color="primary">done_outline</mat-icon>
+    </ng-template>
+</div>
+<div mat-dialog-content>
+    <ng-template [ngIf]="data.messages.length > 0" [ngIfElse] = "correctContent">
+        <ul *ngFor="let message of data.messages">
+            <li>{{message}}</li>
+        </ul>
+    </ng-template>
+    <ng-template #correctContent>
+        <ul>
+            <li>El reporte se ha creado correctamente.</li>
+        </ul>
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <ng-template [ngIf]="data.messages.length > 0" [ngIfElse] = "correctButton">
+        <button mat-raised-button color="warn" (click)="onNoClick()" cdkFocusInitial>Vuelve a intentarlo</button>
+    </ng-template>
+    <ng-template #correctButton>
+        <button mat-raised-button color="primary" (click)="onNoClick()" cdkFocusInitial>¡Entendido!</button>
+    </ng-template>
+</div>

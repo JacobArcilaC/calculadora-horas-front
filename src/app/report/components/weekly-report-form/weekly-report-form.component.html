@@ -1,0 +1,30 @@
+<form [formGroup]="informForm">
+    <mat-card class="inform-form-card mat-elevation-z8">
+            <mat-card-title>Consultar Horas Semanales</mat-card-title>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Identificación del tecnico" formControlName="idTecnico">
+                        <mat-error *ngIf="informForm.controls['idTecnico'].hasError('required')">
+                            La identificación del técnico es <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Semana" formControlName="semana">
+                        <mat-error *ngIf="informForm.controls['semana'].hasError('required')">
+                        La semana es <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>    
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="!informForm.valid"  (click)="generateReport()" mat-raised-button color="primary">Consultar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
