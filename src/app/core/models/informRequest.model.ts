@@ -1,4 +1,4 @@
 export interface InformRequest{
-    idTecnico: string;
-    semana: string;
+    idTecnico: string,
+    semana: string,
 }

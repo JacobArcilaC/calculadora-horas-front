@@ -16,7 +16,6 @@ export class ReportFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private reportService: ReportService,
-    private router: Router,
     private modal: MatDialog
   ) {}
 
