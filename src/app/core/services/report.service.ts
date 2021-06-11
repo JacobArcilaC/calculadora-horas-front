@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Report } from './../models/report.model';
 import { InformRequest } from '../models/informRequest.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,11 @@ export class ReportService {
   ) { }
 
   createReport(report: Report) {
-    return this.http.post<any>(`/api/reporte`, report);
+    return this.http.post<any>(`${environment.url_api}`, report);
   }
 
   generateInform(informRequest: InformRequest){
-    return this.http.post<any>(`/api/reporte/informe`, informRequest);
+    return this.http.post<any>(`${environment.url_api}/informe`, informRequest);
   }
 
 }
