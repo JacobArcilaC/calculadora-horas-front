@@ -5,8 +5,10 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { Report } from '../models/report.model';
 import { Inform } from '../models/inform.model';
 import { InformRequest } from '../models/informRequest.model';
+import { HttpClient } from '@angular/common/http';
 
 describe('ReportService', () => {
+  let httpClient: HttpClient;
   let service: ReportService;
   let httpTestingController: HttpTestingController;
 
@@ -14,6 +16,7 @@ describe('ReportService', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     });
+    httpClient = TestBed.inject(HttpClient);
     service = TestBed.inject(ReportService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
@@ -50,7 +53,7 @@ describe('ReportService', () => {
       expect(response).toEqual(expectCreateResponse);
     });
 
-    const req = httpTestingController.expectOne('/api/reporte');
+    const req = httpTestingController.expectOne('http://localhost:8080/api/reporte');
     expect(req.request.method).toEqual('POST');
     req.flush(expectCreateResponse);
   });
@@ -76,7 +79,7 @@ describe('ReportService', () => {
       expect(response).toEqual(expectedGenerateResponse);
     });
 
-    const req = httpTestingController.expectOne('/api/reporte/informe');
+    const req = httpTestingController.expectOne('http://localhost:8080/api/reporte/informe');
     expect(req.request.method).toEqual('POST');
     req.flush(expectedGenerateResponse);
 
